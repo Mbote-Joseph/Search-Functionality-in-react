@@ -30,17 +30,19 @@ let Search = ({ data }) => {
       />
 
       <br />
-      <ul>
+      <div className="display">
         {filteredData.map((item) => {
           return (
             <div key={item.id} className="card-item">
               <h4 className="card-header"> {item.name} </h4>
               <img src={item.imageUrl} alt={item.name} />
               <p>{item.description}</p>
+              <h5>${item.price}</h5>
+              <button className="btn btn-primary">Add to Cart</button>
             </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };
