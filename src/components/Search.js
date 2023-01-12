@@ -34,7 +34,7 @@ let Search = ({ data }) => {
         {filteredData.map((item) => {
           return (
             <div key={item.id} className="card-item">
-              <li> {item.name} </li>
+              <h4 className="card-header"> {item.name} </h4>
               <img src={item.imageUrl} alt={item.name} />
               <p>{item.description}</p>
             </div>
