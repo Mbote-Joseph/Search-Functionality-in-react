@@ -4,11 +4,13 @@ import "./Search.css";
 let Search = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(data);
+  const [cart, setCart] = useState([]);
+  const list = [];
 
-  console.log(data);
+  //   console.log(data);
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
-    console.log(searchTerm.toLowerCase());
+    // console.log(searchTerm.toLowerCase());
     setFilteredData(
       data.filter((item) =>
         item.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -18,6 +20,12 @@ let Search = ({ data }) => {
   //   {filteredData.map((item) => {
   //     return <li key={item.id}>{item}</li>;
   //   })}
+  let onAdd = (item) => {
+    setCart(list.push(data[item]));
+    return list.push(data[item]);
+  };
+
+  console.log(cart);
 
   return (
     <div>
@@ -38,7 +46,9 @@ let Search = ({ data }) => {
               <img src={item.imageUrl} alt={item.name} />
               <p>{item.description}</p>
               <h5>${item.price}</h5>
-              <button className="btn btn-primary">Add to Cart</button>
+              <button className="btn btn-primary" onClick={onAdd}>
+                Add to Cart
+              </button>
             </div>
           );
         })}

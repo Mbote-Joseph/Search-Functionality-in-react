@@ -13,3 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+.nav {
+  left: 0;
+  top: 0;
+  height: 70px;
+  background: #ee7e63;
+  color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px;
+}
