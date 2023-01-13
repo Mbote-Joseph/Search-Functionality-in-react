@@ -17,17 +17,28 @@ let Search = ({ data }) => {
       )
     );
   };
-  //   {filteredData.map((item) => {
-  //     return <li key={item.id}>{item}</li>;
-  //   })}
-  let onAdd = (item) => {
-    setCart([...cart, data[item]]);
-    // console.log(list);
-    console.log(cart);
 
-    return cart.push(data[item]);
+  //   Adding item to the Cart list
+  let onAdd = (item) => {
+    // item.preventDefault();
+
+    setCart([
+      ...cart,
+      {
+        id: item.id,
+        name: item.name,
+        imageUrl: item.imageUrl,
+        price: item.price,
+        description: item.description,
+      },
+    ]);
+    // console.log(list);
   };
 
+  console.log(cart);
+  console.log(cart.length);
+
+  // The rendering part
   return (
     <div>
       <input
