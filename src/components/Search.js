@@ -5,7 +5,7 @@ let Search = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   const [cart, setCart] = useState([]);
-  const list = [];
+  //   const list = [];
 
   //   console.log(data);
   const handleSearch = (e) => {
@@ -21,11 +21,12 @@ let Search = ({ data }) => {
   //     return <li key={item.id}>{item}</li>;
   //   })}
   let onAdd = (item) => {
-    setCart(list.push(data[item]));
-    return list.push(data[item]);
-  };
+    setCart([...cart, data[item]]);
+    // console.log(list);
+    console.log(cart);
 
-  console.log(cart);
+    return cart.push(data[item]);
+  };
 
   return (
     <div>
