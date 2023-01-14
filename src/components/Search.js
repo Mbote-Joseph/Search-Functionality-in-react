@@ -64,46 +64,48 @@ let Search = ({ data }) => {
         <h3>Home</h3>
         <h3>About</h3>
       </div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className="form-control form-group"
-      />
+      <div className="container">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="form-control form-group"
+        />
 
-      <br />
-      <div className="display">
-        {filteredData.map((item) => {
-          return (
-            <div key={item.id} className="card-item">
-              <h4 className="card-header"> {item.name} </h4>
-              <img src={item.imageUrl} alt={item.name} />
-              <p>{item.description}</p>
-              <h5>${item.price}</h5>
-              <button className="btn btn-primary" onClick={() => onAdd(item)}>
-                Add to Cart
-              </button>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <button onClick={() => setIsOpen(true)}>Open Modal</button>
-        <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-          <button onClick={() => setIsOpen(false)}>Close</button>
+        <br />
+        <div className="display">
           {filteredData.map((item) => {
-            // console.log(item);
             return (
               <div key={item.id} className="card-item">
                 <h4 className="card-header"> {item.name} </h4>
                 <img src={item.imageUrl} alt={item.name} />
                 <p>{item.description}</p>
                 <h5>${item.price}</h5>
+                <button className="btn btn-primary" onClick={() => onAdd(item)}>
+                  Add to Cart
+                </button>
               </div>
             );
           })}
-        </Modal>
+        </div>
+        <div>
+          <button onClick={() => setIsOpen(true)}>Open Modal</button>
+          <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+            <button onClick={() => setIsOpen(false)}>Close</button>
+            {filteredData.map((item) => {
+              // console.log(item);
+              return (
+                <div key={item.id} className="card-item">
+                  <h4 className="card-header"> {item.name} </h4>
+                  <img src={item.imageUrl} alt={item.name} />
+                  <p>{item.description}</p>
+                  <h5>${item.price}</h5>
+                </div>
+              );
+            })}
+          </Modal>
+        </div>
       </div>
     </div>
   );

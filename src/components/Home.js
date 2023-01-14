@@ -5,7 +5,7 @@ import "./Home.css";
 let Home = () => {
   //   console.log(jsonData);
   return (
-    <div className="container">
+    <div>
       <Search data={jsonData} />
     </div>
   );
