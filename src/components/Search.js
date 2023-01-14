@@ -60,6 +60,10 @@ let Search = ({ data }) => {
   // The rendering part
   return (
     <div>
+      <div className="nav">
+        <h3>Home</h3>
+        <h3>About</h3>
+      </div>
       <input
         type="text"
         placeholder="Search..."
