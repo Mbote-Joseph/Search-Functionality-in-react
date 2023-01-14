@@ -62,6 +62,8 @@ let Search = ({ data }) => {
     <div>
       <div className="nav">
         <h3>Home</h3>
+
+        {cart.length > 0 ? <h3>cart {cart.length}</h3> : " "}
         <h3>About</h3>
       </div>
       <div className="container">
